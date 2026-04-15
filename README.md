@@ -47,7 +47,7 @@ No frameworks, no complexity—just a simple idea.
 
 ## 🚀 Try it
 
-👉 https://minhphuong1004.github.io/side_quest_generator/
+👉 https://minhphuong1004.github.io/side-quest-generator/
 
 ---
 
