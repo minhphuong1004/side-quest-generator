@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+        <meta charset="UTF-8">
+        
+        <title>Side Quest Generator</title>
+
+            <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            text-align: center;
+            background: #fde3dd;
+            color: #444;
+            padding:50px;
+        }
+
+        h1 {
+            font-weight: 500;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            background: pink;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: palevioletred;
+        }
+
+        #questBox {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding: 20px;
+            font-size: 20px;
+            background: whitesmoke;
+            border: grey;
+            border-radius: 30px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .rarity {
+            font-size: 16px;
+            margin-bottom: 5px;
+            opacity: 0.7;
+        }
+    </style>
+    </head>
+
+    <body>
+        <h1>⋆.𐙚 ̊  Get your side quest today! ⋆✴︎˚｡⋆</h1>
+        <button onclick="giveQuest()">Give me a quest</button>
+        <div id = "questBox">
+            <div class="rarity" id="rarity"></div>
+            <p id="quest"></p>
+        </div>
+        
+
+        <script>
+        const quests = [
+            { text: "Smile at someone gently", rarity: "Common" },
+            { text: "Write 3 honest thoughts", rarity: "Common" },
+            { text: "Work on a skill for 15 minutes", rarity: "Common" },
+            { text: "Sit by a window and do nothing for 5 minutes", rarity: "Rare" },
+            { text: "Draw something using only one continuous line", rarity: "Rare" },
+            { text: "Write a 3-sentence story", rarity: "Common" },
+            { text: "Rename a random object in your room dramatically", rarity: "Rare" },
+            { text: "Describe your day as if it were a movie scene", rarity: "Rare" },
+            { text: "Ask someone what made them smile today", rarity: "Common" },
+            { text: "Share a song with a friend without explanation", rarity: "Rare" },
+            { text: "Read a random Wikipedia page (no doom scrolling)", rarity: "Common" },
+            { text: "Open Google Maps and 'visit' a random place", rarity: "Common" },
+            { text: "Make a drink and savor it slowly", rarity: "Common" },
+            { text: "Write a note to your future self", rarity: "Legendary" },
+            { text: "Act like today is a turning point in your story", rarity: "Legendary" },
+            { text: "Close your eyes and read a random paragraph", rarity: "Rare" },
+            { text: "Pretend you're a character completing a quest log", rarity: "Legendary" },
+            { text: "Stretch like a lazy cat", rarity: "Common" },
+            { text: "Write down 3 things you're grateful for", rarity: "Common" },
+            { text: "Make a tiny 3-song playlist for your mood", rarity: "Rare" },
+            { text: "Take a breath and notice 5 things around you", rarity: "Common" }
+        ];
+
+        function giveQuest() {
+        const random = quests[Math.floor(Math.random() * quests.length)];
+        document.getElementById("quest").innerText = random.text;
+        document.getElementById("rarity").innerText = "✨ " + random.rarity;
+
+        const box = document.getElementById("questBox");
+        box.style.opacity = 0;
+        setTimeout(() => {
+            box.style.opacity = 1;
+        }, 100);
+        }
+        </script>
+        <img loading="eager" src = "https://i.pinimg.com/originals/64/eb/06/64eb06c1afc9baa55a85f059b2564f00.gif"
+        width="500" height="500">
+    </body>
+</html>
